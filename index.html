@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Convertidor</title>
+<meta name="description" content="Convierte imágenes y archivos de datos sin conexión. Todo se procesa en tu dispositivo.">
+
+<!-- PWA: datos para instalarla en el celular -->
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="iconos/icono-192.png">
+<link rel="apple-touch-icon" href="iconos/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Convertidor">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#e9eaec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0d0f" media="(prefers-color-scheme: dark)">
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main class="app">
+    <header class="cabecera">
+      <div>
+        <h1>Convertidor</h1>
+        <p>Todo se procesa en este dispositivo. Nada se sube a internet.</p>
+      </div>
+      <span class="estado" id="estado"><i></i><span id="estadoTexto">Preparando…</span></span>
+    </header>
+
+    <!-- Elegir archivos -->
+    <section class="panel vidrio zona" id="zona">
+      <p class="zona-titulo">Arrastra archivos aquí</p>
+      <p>Imágenes: JPG, PNG, WEBP, GIF, BMP, ICO, HEIC · Datos: CSV, JSON, Excel, Markdown</p>
+      <div class="fila-botones">
+        <button class="boton" id="btnFotos" type="button">Elegir fotos</button>
+        <button class="boton secundario" id="btnArchivos" type="button">Elegir archivos</button>
+      </div>
+      <input type="file" id="inFotos" multiple accept="image/*" hidden>
+      <input type="file" id="inArchivos" multiple hidden>
+    </section>
+
+    <!-- Ajustes de imagen (aparece cuando hay imágenes en la lista) -->
+    <section class="panel vidrio" id="ajustes" hidden>
+      <h2>Ajustes de imagen</h2>
+      <div class="ajustes">
+        <label class="campo">
+          <span>Convertir todas a</span>
+          <select id="selFormato"></select>
+        </label>
+        <label class="campo" id="campoCalidad">
+          <span>Calidad <b id="valCalidad">85</b></span>
+          <input type="range" id="inCalidad" min="10" max="100" step="5" value="85">
+        </label>
+        <label class="campo">
+          <span>Lado máximo en píxeles</span>
+          <input type="number" id="inLado" inputmode="numeric" min="16" max="20000" placeholder="Tamaño original">
+        </label>
+      </div>
+    </section>
+
+    <!-- Lista de archivos -->
+    <section class="panel vidrio" id="panelLista" hidden>
+      <div class="lista-cabecera">
+        <h2 id="resumen">Archivos</h2>
+        <button class="enlace" id="btnVaciar" type="button">Vaciar</button>
+      </div>
+      <div class="progreso" id="progreso" hidden><i id="progresoBarra"></i></div>
+      <ul class="lista" id="lista"></ul>
+    </section>
+  </main>
+
+  <!-- Barra de acciones, siempre al alcance del pulgar -->
+  <div class="acciones-barra vidrio" id="barra" hidden>
+    <button class="boton" id="btnConvertir" type="button">Convertir</button>
+    <button class="boton secundario" id="btnZip" type="button" disabled>Descargar todo (.zip)</button>
+  </div>
+
+  <div class="cortina" id="cortina">Suelta los archivos para añadirlos</div>
+  <div class="aviso" id="aviso" role="status"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

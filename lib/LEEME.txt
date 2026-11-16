@@ -1,0 +1,11 @@
+Librerías de terceros incluidas en el proyecto (así la app funciona sin conexión).
+Cada una conserva su propia licencia.
+
+  webp/        @jsquash/webp 1.5.0   (Apache-2.0)  Guardar imágenes WEBP
+               encode.js está modificado: se quitó la detección de SIMD.
+  gifenc.js    gifenc 1.0.3          (MIT)         Guardar imágenes GIF
+  heic-to.js   heic-to 1.6.7         (LGPL-3.0, incluye libheif)  Abrir fotos HEIC
+  marked.js    marked 18.2.1         (MIT)         Markdown a HTML
+  papaparse.js Papa Parse 5.7.1      (MIT)         Leer y escribir CSV
+  xlsx.js      SheetJS 0.20.3        (Apache-2.0)  Leer y escribir Excel
+  fflate.js    fflate 0.8.3          (MIT)         Crear archivos ZIP
