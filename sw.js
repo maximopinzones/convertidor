@@ -5,7 +5,7 @@
 // La app abre al instante con lo guardado y, si hay internet, descarga la
 // versión nueva en segundo plano. La próxima vez que se abra ya es la nueva.
 
-const CACHE = 'convertidor-v1';
+const CACHE = 'convertidor-v2';
 
 const ARCHIVOS = [
   './',
@@ -20,6 +20,7 @@ const ARCHIVOS = [
   'js/descargas.js',
   'js/convertidores/imagenes.js',
   'js/convertidores/datos.js',
+  'js/convertidores/pdf.js',
   'lib/papaparse.js',
   'lib/xlsx.js',
   'lib/marked.js',
@@ -31,6 +32,25 @@ const ARCHIVOS = [
   'lib/webp/utils.js',
   'lib/webp/codec/enc/webp_enc.js',
   'lib/webp/codec/enc/webp_enc.wasm',
+  'lib/pdf-lib.js',
+  'lib/pdfjs/pdf.mjs',
+  'lib/pdfjs/pdf.worker.mjs',
+  'lib/pdfjs/standard_fonts/FoxitDingbats.pfb',
+  'lib/pdfjs/standard_fonts/FoxitFixed.pfb',
+  'lib/pdfjs/standard_fonts/FoxitFixedBold.pfb',
+  'lib/pdfjs/standard_fonts/FoxitFixedBoldItalic.pfb',
+  'lib/pdfjs/standard_fonts/FoxitFixedItalic.pfb',
+  'lib/pdfjs/standard_fonts/FoxitSerif.pfb',
+  'lib/pdfjs/standard_fonts/FoxitSerifBold.pfb',
+  'lib/pdfjs/standard_fonts/FoxitSerifBoldItalic.pfb',
+  'lib/pdfjs/standard_fonts/FoxitSerifItalic.pfb',
+  'lib/pdfjs/standard_fonts/FoxitSymbol.pfb',
+  'lib/pdfjs/standard_fonts/LiberationSans-Bold.ttf',
+  'lib/pdfjs/standard_fonts/LiberationSans-BoldItalic.ttf',
+  'lib/pdfjs/standard_fonts/LiberationSans-Italic.ttf',
+  'lib/pdfjs/standard_fonts/LiberationSans-Regular.ttf',
+  'lib/pdfjs/standard_fonts/LICENSE_FOXIT',
+  'lib/pdfjs/standard_fonts/LICENSE_LIBERATION',
 ];
 
 // Al instalarse: guarda todos los archivos

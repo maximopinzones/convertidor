@@ -9,3 +9,6 @@ Cada una conserva su propia licencia.
   papaparse.js Papa Parse 5.7.1      (MIT)         Leer y escribir CSV
   xlsx.js      SheetJS 0.20.3        (Apache-2.0)  Leer y escribir Excel
   fflate.js    fflate 0.8.3          (MIT)         Crear archivos ZIP
+  pdf-lib.js   pdf-lib 1.17.1        (MIT)         Crear, unir, separar y rotar PDF
+  pdfjs/       pdf.js 6.5.438        (Apache-2.0)  Dibujar páginas de PDF (versión "legacy")
+               Incluye fuentes estándar (licencias en pdfjs/standard_fonts).

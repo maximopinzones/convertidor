@@ -1,7 +1,7 @@
 {
   "name": "Convertidor",
   "short_name": "Convertidor",
-  "description": "Convierte imágenes y archivos de datos sin conexión, en tu dispositivo",
+  "description": "Convierte imágenes, PDF y archivos de datos sin conexión, en tu dispositivo",
   "lang": "es",
   "start_url": "./",
   "scope": "./",

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Convertidor</title>
-<meta name="description" content="Convierte imágenes y archivos de datos sin conexión. Todo se procesa en tu dispositivo.">
+<meta name="description" content="Convierte imágenes, PDF y archivos de datos sin conexión. Todo se procesa en tu dispositivo.">
 
 <!-- PWA: datos para instalarla en el celular -->
 <link rel="manifest" href="manifest.json">
@@ -33,7 +33,7 @@
     <!-- Elegir archivos -->
     <section class="panel vidrio zona" id="zona">
       <p class="zona-titulo">Arrastra archivos aquí</p>
-      <p>Imágenes: JPG, PNG, WEBP, GIF, BMP, ICO, HEIC · Datos: CSV, JSON, Excel, Markdown</p>
+      <p>Imágenes: JPG, PNG, WEBP, GIF, BMP, ICO, HEIC · PDF · Datos: CSV, JSON, Excel, Markdown, TXT</p>
       <div class="fila-botones">
         <button class="boton" id="btnFotos" type="button">Elegir fotos</button>
         <button class="boton secundario" id="btnArchivos" type="button">Elegir archivos</button>
@@ -58,6 +58,25 @@
           <span>Lado máximo en píxeles</span>
           <input type="number" id="inLado" inputmode="numeric" min="16" max="20000" placeholder="Tamaño original">
         </label>
+      </div>
+    </section>
+
+    <!-- Ajustes de PDF (aparece cuando hay un PDF o varias imágenes) -->
+    <section class="panel vidrio" id="ajustesPdf" hidden>
+      <h2>PDF</h2>
+      <div class="ajustes">
+        <label class="campo" id="campoPaginas">
+          <span>Páginas a extraer</span>
+          <input type="text" id="inPaginas" inputmode="text" autocomplete="off" placeholder="Ej.: 1-3, 5">
+        </label>
+        <label class="campo" id="campoCalidadPdf">
+          <span>Calidad al comprimir o pasar a imagen</span>
+          <select id="selCalidadPdf"></select>
+        </label>
+        <div class="campo">
+          <span id="textoUnir">Une los PDF e imágenes de la lista, en orden</span>
+          <button class="boton secundario" id="btnUnir" type="button">Unir en un solo PDF</button>
+        </div>
       </div>
     </section>
 

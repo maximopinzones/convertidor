@@ -36,3 +36,17 @@ export const gifenc = () => modulo('../lib/gifenc.js');         // GIF
 export const heic = () => modulo('../lib/heic-to.js');          // HEIC (fotos del iPhone)
 export const webp = () => modulo('../lib/webp/encode.js');      // WEBP
 export const fflate = () => modulo('../lib/fflate.js');         // ZIP
+
+// PDF
+export const pdflib = () => guion('lib/pdf-lib.js', 'PDFLib');  // crear y modificar PDF
+let pdfjsListo;
+export function pdfjs() {                                        // dibujar páginas de PDF
+  if (!pdfjsListo) {
+    pdfjsListo = modulo('../lib/pdfjs/pdf.mjs').then((m) => {
+      m.GlobalWorkerOptions.workerSrc = new URL('../lib/pdfjs/pdf.worker.mjs', import.meta.url).href;
+      return m;
+    });
+    pdfjsListo.catch(() => { pdfjsListo = null; });
+  }
+  return pdfjsListo;
+}
